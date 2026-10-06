@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-800-normal.woff2") format("woff2");
+          font-weight: 800;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+        }
+        .caption-group {
+          position: absolute;
+          left: 110px;
+          right: 110px;
+          top: 1450px;
+          display: flex;
+          justify-content: center;
+          opacity: 0;
+          visibility: hidden;
+        }
+        .caption-line {
+          display: block;
+          max-width: 860px;
+          padding: 18px 34px;
+          border-radius: 26px;
+          background: rgba(8, 42, 55, 0.82);
+          color: #ffffff;
+          font-family: "Jakarta", sans-serif;
+          font-weight: 800;
+          font-size: 50px;
+          line-height: 1.25;
+          text-align: center;
+        }
+      </style>
+
+      <div id="root" data-composition-id="captions" data-width="1080" data-height="1920">
+        <div class="caption-group" id="cap-1"><span class="caption-line">Anak batuk, berdehit dan sukar bernafas?</span></div>
+        <div class="caption-group" id="cap-2"><span class="caption-line">Bila sebenarnya perlu bawa anak untuk nebuliser?</span></div>
+        <div class="caption-group" id="cap-3"><span class="caption-line">Nebuliser menukar ubat cecair kepada wap halus,</span></div>
+        <div class="caption-group" id="cap-4"><span class="caption-line">supaya mudah disedut terus ke saluran pernafasan.</span></div>
+        <div class="caption-group" id="cap-5"><span class="caption-line">Bawa anak jumpa doktor jika dia bernafas laju atau tercungap-cungap,</span></div>
+        <div class="caption-group" id="cap-6"><span class="caption-line">berbunyi berdehit ketika bernafas,</span></div>
+        <div class="caption-group" id="cap-7"><span class="caption-line">dada atau perut tertarik ke dalam,</span></div>
+        <div class="caption-group" id="cap-8"><span class="caption-line">batuk berterusan hingga sukar tidur atau makan,</span></div>
+        <div class="caption-group" id="cap-9"><span class="caption-line">atau inhaler di rumah tidak lagi membantu.</span></div>
+        <div class="caption-group" id="cap-10"><span class="caption-line">Doktor akan memeriksa anak terlebih dahulu</span></div>
+        <div class="caption-group" id="cap-11"><span class="caption-line">dan menentukan sama ada nebuliser diperlukan.</span></div>
+        <div class="caption-group" id="cap-12"><span class="caption-line">Jika bibir kebiruan, anak terlalu lemah atau sukar menyusu,</span></div>
+        <div class="caption-group" id="cap-13"><span class="caption-line">terus dapatkan rawatan kecemasan.</span></div>
+        <div class="caption-group" id="cap-14"><span class="caption-line">Klinik Medina sedia membantu keluarga anda.</span></div>
+        <div class="caption-group" id="cap-15"><span class="caption-line">Hubungi kami di 09-662 1491.</span></div>
+      </div>
+
+      <script>
+        // Timing (seconds) for each voiceover line. Retime these once the
+        // recorded voiceover is in.
+        const groups = [
+          ["#cap-1", 0.3, 3.0],
+          ["#cap-2", 3.0, 5.9],
+          ["#cap-3", 6.2, 9.6],
+          ["#cap-4", 9.6, 12.9],
+          ["#cap-5", 13.3, 16.6],
+          ["#cap-6", 16.6, 20.0],
+          ["#cap-7", 20.0, 23.6],
+          ["#cap-8", 23.6, 27.2],
+          ["#cap-9", 27.2, 30.9],
+          ["#cap-10", 31.2, 34.0],
+          ["#cap-11", 34.0, 36.9],
+          ["#cap-12", 37.2, 40.8],
+          ["#cap-13", 40.8, 43.9],
+          ["#cap-14", 44.2, 47.6],
+          ["#cap-15", 47.6, 51.8],
+        ];
+        const tl = gsap.timeline({ paused: true });
+        groups.forEach(([sel, start, end]) => {
+          tl.set(sel, { visibility: "visible" }, start);
+          tl.fromTo(sel, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.2, ease: "power2.out" }, start);
+          tl.to(sel, { opacity: 0, duration: 0.12, ease: "power1.in" }, end - 0.12);
+          tl.set(sel, { opacity: 0, visibility: "hidden" }, end);
+        });
+        window.__timelines["captions"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

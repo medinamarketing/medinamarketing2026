@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Anton";
+          src: url("assets/fonts/anton-latin-400-normal.woff2") format("woff2");
+          font-weight: 400;
+        }
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-700-normal.woff2") format("woff2");
+          font-weight: 700;
+        }
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-800-normal.woff2") format("woff2");
+          font-weight: 800;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          color: #ffffff;
+        }
+        #s5-wrap {
+          position: absolute;
+          inset: 0;
+        }
+        #s5-tint {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at 50% 30%, rgba(228, 87, 46, 0.32), rgba(228, 87, 46, 0) 70%);
+        }
+        #s5-badge {
+          position: absolute;
+          left: 110px;
+          top: 230px;
+          display: flex;
+          align-items: center;
+          gap: 18px;
+          padding: 14px 30px 14px 18px;
+          border-radius: 999px;
+          background: #e4572e;
+          font-family: "Jakarta", sans-serif;
+          font-weight: 800;
+          font-size: 36px;
+          letter-spacing: 0.12em;
+        }
+        #s5-badge svg {
+          width: 52px;
+          height: 52px;
+        }
+        #s5-title {
+          position: absolute;
+          left: 110px;
+          right: 110px;
+          top: 330px;
+          font-family: "Anton", sans-serif;
+          font-size: 112px;
+          line-height: 1.06;
+          text-transform: uppercase;
+        }
+        #s5-title-accent {
+          color: #ffb59e;
+        }
+        #s5-card {
+          position: absolute;
+          left: 110px;
+          right: 110px;
+          top: 720px;
+          padding: 24px 44px;
+          border-radius: 36px;
+          background: #ffffff;
+          color: #12455a;
+        }
+        .s5-item {
+          display: flex;
+          align-items: center;
+          gap: 26px;
+          padding: 30px 0;
+          font-family: "Jakarta", sans-serif;
+          font-weight: 800;
+          font-size: 44px;
+          line-height: 1.2;
+        }
+        .s5-item + .s5-item {
+          border-top: 3px solid #f1e3de;
+        }
+        .s5-dot {
+          flex: 0 0 26px;
+          width: 26px;
+          height: 26px;
+          border-radius: 50%;
+          background: #e4572e;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s5-kecemasan" data-width="1080" data-height="1920">
+        <div id="s5-wrap">
+          <div id="s5-tint"></div>
+          <div id="s5-badge">
+            <svg viewBox="0 0 52 52" fill="none">
+              <path d="M26 5 L49 46 H3 Z" fill="#ffffff" />
+              <path d="M26 19 V32" stroke="#e4572e" stroke-width="5" stroke-linecap="round" />
+              <circle cx="26" cy="39" r="3" fill="#e4572e" />
+            </svg>
+            KECEMASAN
+          </div>
+          <div id="s5-title">Terus ke <span id="s5-title-accent">unit kecemasan</span> jika:</div>
+          <div id="s5-card">
+            <div class="s5-item" id="s5-item-1"><span class="s5-dot"></span>Bibir atau kuku kebiruan</div>
+            <div class="s5-item" id="s5-item-2"><span class="s5-dot"></span>Anak terlalu lemah atau mengantuk</div>
+            <div class="s5-item" id="s5-item-3"><span class="s5-dot"></span>Sukar bercakap, menangis atau menyusu</div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#s5-tint", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }, 0);
+        tl.fromTo("#s5-badge", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.2)" }, 0.1);
+        tl.fromTo("#s5-title", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 0.25);
+        tl.fromTo("#s5-card", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.6);
+        tl.fromTo(
+          ["#s5-item-1", "#s5-item-2", "#s5-item-3"],
+          { opacity: 0, x: 40 },
+          { opacity: 1, x: 0, duration: 0.45, ease: "power2.out", stagger: 0.9 },
+          0.8
+        );
+        tl.to("#s5-badge", { scale: 1.06, duration: 0.5, ease: "sine.inOut", yoyo: true, repeat: 5 }, 1.0);
+        tl.to("#s5-wrap", { opacity: 0, duration: 0.35, ease: "power1.in" }, 6.65);
+        window.__timelines["s5-kecemasan"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

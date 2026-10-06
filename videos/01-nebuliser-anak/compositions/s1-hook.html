@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Anton";
+          src: url("assets/fonts/anton-latin-400-normal.woff2") format("woff2");
+          font-weight: 400;
+        }
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-700-normal.woff2") format("woff2");
+          font-weight: 700;
+        }
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-800-normal.woff2") format("woff2");
+          font-weight: 800;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          color: #ffffff;
+        }
+        #s1-wrap {
+          position: absolute;
+          inset: 0;
+        }
+        #s1-brand {
+          position: absolute;
+          left: 110px;
+          top: 220px;
+          display: flex;
+          align-items: center;
+          gap: 22px;
+        }
+        #s1-brand-mark {
+          width: 92px;
+          height: 92px;
+          border-radius: 13%;
+          overflow: hidden;
+        }
+        #s1-brand-mark img {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+        #s1-brand-name {
+          font-family: "Jakarta", sans-serif;
+          font-weight: 800;
+          font-size: 34px;
+          letter-spacing: 0.14em;
+          color: #8bd1b9;
+        }
+        #s1-headline {
+          position: absolute;
+          left: 110px;
+          right: 110px;
+          top: 420px;
+          font-family: "Anton", sans-serif;
+          font-size: 160px;
+          line-height: 1.25;
+          text-transform: uppercase;
+        }
+        .s1-line {
+          display: block;
+        }
+        #s1-line-2 {
+          color: #3cb394;
+        }
+        #s1-waves {
+          position: absolute;
+          left: 110px;
+          top: 830px;
+          width: 860px;
+          height: 160px;
+        }
+        #s1-question {
+          position: absolute;
+          left: 110px;
+          right: 110px;
+          top: 1060px;
+          padding: 40px 48px;
+          border-radius: 36px;
+          background: #ffffff;
+          color: #12455a;
+          font-family: "Jakarta", sans-serif;
+          font-weight: 800;
+          font-size: 58px;
+          line-height: 1.2;
+        }
+        #s1-question-accent {
+          color: #1f8a70;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s1-hook" data-width="1080" data-height="1920">
+        <div id="s1-wrap">
+          <div id="s1-brand">
+            <div id="s1-brand-mark"><img src="assets/img/logo-mark.png" alt="" /></div>
+            <div id="s1-brand-name">KLINIK MEDINA</div>
+          </div>
+          <div id="s1-headline">
+            <div class="s1-line" id="s1-line-1">Anak batuk</div>
+            <div class="s1-line" id="s1-line-2">&amp; berdehit?</div>
+          </div>
+          <svg id="s1-waves" viewBox="0 0 860 160" fill="none">
+            <path
+              id="s1-wave-1"
+              d="M0 80 C 70 20, 140 140, 210 80 S 350 20, 420 80 S 560 140, 630 80 S 770 20, 860 80"
+              stroke="#3cb394"
+              stroke-width="10"
+              stroke-linecap="round"
+            />
+            <path
+              id="s1-wave-2"
+              d="M0 80 C 70 40, 140 120, 210 80 S 350 40, 420 80 S 560 120, 630 80 S 770 40, 860 80"
+              stroke="#8bd1b9"
+              stroke-width="6"
+              stroke-linecap="round"
+              opacity="0.6"
+            />
+          </svg>
+          <div id="s1-question">
+            Bila perlu bawa anak untuk <span id="s1-question-accent">nebuliser?</span>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#s1-brand", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.1);
+        tl.fromTo("#s1-line-1", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.25);
+        tl.fromTo("#s1-line-2", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.55);
+        tl.fromTo(
+          ["#s1-wave-1", "#s1-wave-2"],
+          { strokeDasharray: 1200, strokeDashoffset: 1200 },
+          { strokeDashoffset: 0, duration: 1.4, ease: "power2.inOut", stagger: 0.15 },
+          0.9
+        );
+        tl.fromTo("#s1-waves", { scaleY: 1 }, { scaleY: 0.55, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 5 }, 1.2);
+        tl.fromTo("#s1-question", { opacity: 0, y: 50, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.6)" }, 2.9);
+        tl.to("#s1-wrap", { opacity: 0, duration: 0.35, ease: "power1.in" }, 5.65);
+        window.__timelines["s1-hook"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

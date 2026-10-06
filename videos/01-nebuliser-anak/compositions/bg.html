@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: linear-gradient(170deg, #12455a 0%, #0c3646 55%, #082a37 100%);
+        }
+        #bg-glow-a,
+        #bg-glow-b {
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(80px);
+        }
+        #bg-glow-a {
+          width: 760px;
+          height: 760px;
+          left: -260px;
+          top: -200px;
+          background: rgba(60, 179, 148, 0.35);
+        }
+        #bg-glow-b {
+          width: 820px;
+          height: 820px;
+          right: -320px;
+          bottom: -260px;
+          background: rgba(90, 196, 183, 0.22);
+        }
+        #bg-mark {
+          position: absolute;
+          width: 900px;
+          height: 900px;
+          right: -300px;
+          bottom: 260px;
+          opacity: 0.06;
+          border-radius: 13%;
+          overflow: hidden;
+        }
+        #bg-mark img {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      </style>
+
+      <div id="root" data-composition-id="bg" data-width="1080" data-height="1920">
+        <div id="bg-glow-a"></div>
+        <div id="bg-glow-b"></div>
+        <div id="bg-mark"><img src="assets/img/logo-mark.png" alt="" /></div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#bg-glow-a", { x: 0, y: 0 }, { x: 180, y: 260, duration: 52, ease: "sine.inOut" }, 0);
+        tl.fromTo("#bg-glow-b", { x: 0, y: 0 }, { x: -160, y: -220, duration: 52, ease: "sine.inOut" }, 0);
+        tl.fromTo("#bg-mark", { rotation: -6 }, { rotation: 6, duration: 52, ease: "none" }, 0);
+        window.__timelines["bg"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
