@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-500-normal.woff2") format("woff2");
+          font-weight: 500;
+        }
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-800-normal.woff2") format("woff2");
+          font-weight: 800;
+        }
+        #s7-root {
+          position: absolute;
+          inset: 0;
+          font-family: "Jakarta", sans-serif;
+          color: #ffffff;
+        }
+        #s7-wrap {
+          position: absolute;
+          inset: 0;
+        }
+        #s7-copy {
+          position: absolute;
+          left: 840px;
+          top: 120px;
+          width: 880px;
+        }
+        #s7-kicker {
+          font-weight: 800;
+          font-size: 26px;
+          letter-spacing: 0.22em;
+          color: #8bd1b9;
+        }
+        #s7-headline {
+          margin-top: 18px;
+          font-weight: 800;
+          font-size: 64px;
+          line-height: 1.08;
+          letter-spacing: -0.025em;
+          white-space: nowrap;
+        }
+        #s7-headline-accent {
+          color: #5ed3b0;
+        }
+        #s7-sub {
+          margin-top: 14px;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          font-weight: 500;
+          font-size: 28px;
+          color: rgba(255, 255, 255, 0.78);
+        }
+        #s7-online {
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background: #5ed3b0;
+        }
+        .s7-bubble {
+          position: absolute;
+          overflow: hidden;
+          border-radius: 30px;
+          box-shadow: 0 26px 60px rgba(2, 16, 24, 0.5);
+        }
+        .s7-bubble img {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+        #s7-b1 {
+          left: 1060px;
+          top: 350px;
+          width: 640px;
+          height: 166px;
+        }
+        #s7-b2 {
+          left: 840px;
+          top: 545px;
+          width: 640px;
+          height: 260px;
+        }
+        #s7-b3 {
+          left: 1280px;
+          top: 830px;
+          width: 420px;
+          height: 118px;
+        }
+        #s7-typing {
+          position: absolute;
+          left: 840px;
+          top: 545px;
+          width: 150px;
+          height: 76px;
+          border-radius: 38px;
+          background: #ffffff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          box-shadow: 0 26px 60px rgba(2, 16, 24, 0.5);
+        }
+        .s7-dot {
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background: #7d939c;
+        }
+        .phone {
+          position: absolute;
+          width: 424px;
+          height: 892px;
+          padding: 12px;
+          border-radius: 66px;
+          background: linear-gradient(150deg, #33454e 0%, #121d23 40%, #0a1217 100%);
+          box-shadow: 0 60px 120px rgba(2, 16, 24, 0.6), inset 0 0 0 2px rgba(255, 255, 255, 0.14);
+        }
+        .phone-screen {
+          position: relative;
+          width: 400px;
+          height: 866px;
+          border-radius: 54px;
+          overflow: hidden;
+          background: #f1f5f6;
+        }
+        .phone-screen img {
+          display: block;
+          width: 400px;
+          height: 866px;
+        }
+        #s7-phone {
+          left: 260px;
+          top: 94px;
+        }
+      </style>
+
+      <div data-hf-id="hf-ke2d" id="s7-root" data-composition-id="s7-chat" data-width="1920" data-height="1080">
+        <div data-hf-id="hf-7yxc" id="s7-wrap">
+          <div data-hf-id="hf-amrr" class="phone" id="s7-phone">
+            <div data-hf-id="hf-9o7x" class="phone-screen"><img data-hf-id="hf-3htv" src="assets/screens/chat.jpg" alt=""></div>
+          </div>
+
+          <div data-hf-id="hf-b22z" id="s7-copy">
+            <div data-hf-id="hf-iplb" id="s7-kicker">CHAT DENGAN DOKTOR</div>
+            <div data-hf-id="hf-8qno" id="s7-headline">Tanya doktor, <span data-hf-id="hf-u6l2" id="s7-headline-accent">terus dari app.</span></div>
+            <div data-hf-id="hf-2ap3" id="s7-sub"><span data-hf-id="hf-2x78" id="s7-online"></span>Biasanya membalas dalam 1 jam (waktu klinik)</div>
+          </div>
+
+          <div data-hf-id="hf-qby5" class="s7-bubble" id="s7-b1"><img data-hf-id="hf-varn" src="assets/crops/bubble-1.jpg" alt=""></div>
+          <div data-hf-id="hf-ag8l" id="s7-typing">
+            <div data-hf-id="hf-p9k0" class="s7-dot" id="s7-dot-1"></div>
+            <div data-hf-id="hf-xxfv" class="s7-dot" id="s7-dot-2"></div>
+            <div data-hf-id="hf-tzbu" class="s7-dot" id="s7-dot-3"></div>
+          </div>
+          <div data-hf-id="hf-ua26" class="s7-bubble" id="s7-b2"><img data-hf-id="hf-oj58" src="assets/crops/bubble-2.jpg" alt=""></div>
+          <div data-hf-id="hf-y867" class="s7-bubble" id="s7-b3"><img data-hf-id="hf-ytc1" src="assets/crops/bubble-3.jpg" alt=""></div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#s7-phone", { y: 820, rotation: 8 }, { y: 0, rotation: 0, duration: 0.85, ease: "expo.out" }, 0);
+        tl.fromTo("#s7-kicker", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.2);
+        tl.fromTo("#s7-headline", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.3);
+        tl.fromTo("#s7-sub", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.5);
+        tl.fromTo("#s7-online", { scale: 0.6 }, { scale: 1.25, duration: 0.5, ease: "sine.inOut", yoyo: true, repeat: 7 }, 0.6);
+
+        // Patient asks
+        tl.fromTo("#s7-b1", { opacity: 0, scale: 0.4, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.8)", transformOrigin: "100% 100%" }, 1.0);
+        // Doctor is typing...
+        tl.fromTo("#s7-typing", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", transformOrigin: "0% 100%" }, 1.55);
+        ["#s7-dot-1", "#s7-dot-2", "#s7-dot-3"].forEach((sel, i) => {
+          tl.fromTo(sel, { y: 0 }, { y: -10, duration: 0.18, ease: "sine.out", yoyo: true, repeat: 3 }, 1.6 + i * 0.1);
+        });
+        tl.to("#s7-typing", { opacity: 0, scale: 0.6, duration: 0.15, ease: "power2.in", transformOrigin: "0% 100%" }, 2.15);
+        // Doctor replies
+        tl.fromTo("#s7-b2", { opacity: 0, scale: 0.4, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 0.55, ease: "back.out(1.6)", transformOrigin: "0% 100%" }, 2.2);
+        // Patient thanks
+        tl.fromTo("#s7-b3", { opacity: 0, scale: 0.4, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.8)", transformOrigin: "100% 100%" }, 3.4);
+
+        tl.to("#s7-wrap", { opacity: 0, scale: 0.96, filter: "blur(10px)", duration: 0.4, ease: "power2.in" }, 5.6);
+        window.__timelines["s7-chat"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

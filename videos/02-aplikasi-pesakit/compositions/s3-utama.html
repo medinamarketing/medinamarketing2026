@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-800-normal.woff2") format("woff2");
+          font-weight: 800;
+        }
+        #s3-root {
+          position: absolute;
+          inset: 0;
+          font-family: "Jakarta", sans-serif;
+          color: #ffffff;
+        }
+        #s3-wrap {
+          position: absolute;
+          inset: 0;
+        }
+        #s3-kicker {
+          position: absolute;
+          left: 900px;
+          top: 150px;
+          font-weight: 800;
+          font-size: 26px;
+          letter-spacing: 0.22em;
+          color: #8bd1b9;
+        }
+        #s3-headline {
+          position: absolute;
+          left: 900px;
+          top: 196px;
+          width: 840px;
+          font-weight: 800;
+          font-size: 64px;
+          line-height: 1.08;
+          letter-spacing: -0.025em;
+        }
+        #s3-headline-accent {
+          color: #5ed3b0;
+          white-space: nowrap;
+        }
+        .phone {
+          position: absolute;
+          width: 424px;
+          height: 892px;
+          padding: 12px;
+          border-radius: 66px;
+          background: linear-gradient(150deg, #33454e 0%, #121d23 40%, #0a1217 100%);
+          box-shadow: 0 60px 120px rgba(2, 16, 24, 0.6), inset 0 0 0 2px rgba(255, 255, 255, 0.14);
+        }
+        .phone-screen {
+          position: relative;
+          width: 400px;
+          height: 866px;
+          border-radius: 54px;
+          overflow: hidden;
+          background: #f1f5f6;
+        }
+        .phone-screen img {
+          display: block;
+          width: 400px;
+          height: 866px;
+        }
+        #s3-phone {
+          left: 300px;
+          top: 94px;
+        }
+        .s3-tile {
+          position: absolute;
+          width: 250px;
+          border-radius: 26px;
+          overflow: hidden;
+          box-shadow: 0 26px 60px rgba(2, 16, 24, 0.45);
+        }
+        .s3-tile img {
+          display: block;
+          width: 250px;
+        }
+        .s3-row1 {
+          height: 210px;
+        }
+        .s3-row2 {
+          height: 245px;
+        }
+        .s3-row1 img {
+          height: 210px;
+        }
+        .s3-row2 img {
+          height: 245px;
+        }
+        #s3-t1 {
+          left: 900px;
+          top: 400px;
+        }
+        #s3-t2 {
+          left: 1180px;
+          top: 400px;
+        }
+        #s3-t3 {
+          left: 1460px;
+          top: 400px;
+        }
+        #s3-t4 {
+          left: 900px;
+          top: 640px;
+        }
+        #s3-t5 {
+          left: 1180px;
+          top: 640px;
+        }
+        #s3-t6 {
+          left: 1460px;
+          top: 640px;
+        }
+      </style>
+
+      <div data-hf-id="hf-3a1l" id="s3-root" data-composition-id="s3-utama" data-width="1920" data-height="1080">
+        <div data-hf-id="hf-a77g" id="s3-wrap">
+          <div data-hf-id="hf-pvsb" class="phone" id="s3-phone">
+            <div data-hf-id="hf-9o7x" class="phone-screen"><img data-hf-id="hf-tlb3" src="assets/screens/utama.jpg" alt=""></div>
+          </div>
+          <div data-hf-id="hf-rgtm" id="s3-kicker">SATU APLIKASI</div>
+          <div data-hf-id="hf-qj37" id="s3-headline">Semua urusan kesihatan, <span data-hf-id="hf-qmld" id="s3-headline-accent">di satu tempat.</span></div>
+          <div data-hf-id="hf-w61n" class="s3-tile s3-row1" id="s3-t1"><img data-hf-id="hf-vj9i" src="assets/crops/tile-kronik.jpg" alt=""></div>
+          <div data-hf-id="hf-lak0" class="s3-tile s3-row1" id="s3-t2"><img data-hf-id="hf-ioyw" src="assets/crops/tile-berat.jpg" alt=""></div>
+          <div data-hf-id="hf-m27t" class="s3-tile s3-row1" id="s3-t3"><img data-hf-id="hf-60o2" src="assets/crops/tile-tanggungan.jpg" alt=""></div>
+          <div data-hf-id="hf-3xgf" class="s3-tile s3-row2" id="s3-t4"><img data-hf-id="hf-l523" src="assets/crops/tile-rekod.jpg" alt=""></div>
+          <div data-hf-id="hf-zzce" class="s3-tile s3-row2" id="s3-t5"><img data-hf-id="hf-7y75" src="assets/crops/tile-saringan.jpg" alt=""></div>
+          <div data-hf-id="hf-w18d" class="s3-tile s3-row2" id="s3-t6"><img data-hf-id="hf-6kgx" src="assets/crops/tile-minda.jpg" alt=""></div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        // Handoff: the phone starts exactly where scene 2 left it (left 1138px) and glides left.
+        tl.fromTo("#s3-phone", { x: 838 }, { x: 0, duration: 0.8, ease: "power3.inOut" }, 0);
+        tl.fromTo("#s3-kicker", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.45);
+        tl.fromTo("#s3-headline", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 0.55);
+
+        // Feature tiles fly out of the home screen into a grid (FLIP from their in-phone boxes)
+        const tiles = [
+          ["#s3-t1", 328.4, 308.7, 114.2, 900, 400],
+          ["#s3-t2", 454.2, 308.7, 114.2, 1180, 400],
+          ["#s3-t3", 580.0, 308.7, 114.2, 1460, 400],
+          ["#s3-t4", 328.4, 416.8, 114.5, 900, 640],
+          ["#s3-t5", 454.2, 416.8, 114.5, 1180, 640],
+          ["#s3-t6", 580.0, 416.8, 114.5, 1460, 640],
+        ];
+        tiles.forEach(([sel, sx, sy, sw, gx, gy], i) => {
+          const t = 0.9 + i * 0.25;
+          tl.fromTo(
+            sel,
+            { x: sx - gx, y: sy - gy, scale: sw / 250, opacity: 0, transformOrigin: "0% 0%" },
+            { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.7, ease: "back.out(1.3)", transformOrigin: "0% 0%" },
+            t
+          );
+          tl.to(sel, { y: i % 2 ? 8 : -8, duration: 1.1, ease: "sine.inOut", yoyo: true, repeat: 1 }, t + 0.8);
+        });
+
+        tl.to("#s3-wrap", { opacity: 0, scale: 0.96, filter: "blur(10px)", duration: 0.4, ease: "power2.in" }, 5.6);
+        window.__timelines["s3-utama"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-500-normal.woff2") format("woff2");
+          font-weight: 500;
+        }
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-800-normal.woff2") format("woff2");
+          font-weight: 800;
+        }
+        #s1-root {
+          position: absolute;
+          inset: 0;
+          font-family: "Jakarta", sans-serif;
+          color: #ffffff;
+        }
+        #s1-lines {
+          position: absolute;
+          left: 270px;
+          top: 269px;
+          width: 1400px;
+          display: flex;
+          flex-direction: column;
+          gap: 46px;
+        }
+        .s1-line {
+          display: flex;
+          align-items: center;
+          gap: 40px;
+          height: 150px;
+        }
+        .s1-icon {
+          flex: 0 0 132px;
+          width: 132px;
+          height: 132px;
+          border-radius: 36px;
+          background: rgba(139, 209, 185, 0.14);
+          border: 2px solid rgba(139, 209, 185, 0.35);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .s1-icon svg {
+          width: 70px;
+          height: 70px;
+        }
+        .s1-text {
+          font-weight: 800;
+          font-size: 76px;
+          letter-spacing: -0.02em;
+          line-height: 1.1;
+          white-space: nowrap;
+        }
+        .s1-q {
+          color: #8bd1b9;
+        }
+        #s1-answer {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 400px;
+          text-align: center;
+        }
+        #s1-answer-kicker {
+          font-weight: 500;
+          font-size: 40px;
+          color: #b9e3e8;
+          letter-spacing: 0.02em;
+        }
+        #s1-answer-main {
+          margin-top: 18px;
+          font-weight: 800;
+          font-size: 128px;
+          letter-spacing: -0.03em;
+          line-height: 1.05;
+        }
+        #s1-answer-accent {
+          color: #5ed3b0;
+        }
+        #s1-underline {
+          display: block;
+          margin: 26px auto 0;
+          width: 620px;
+          height: 30px;
+        }
+      </style>
+
+      <div data-hf-id="hf-f6sa" id="s1-root" data-composition-id="s1-hook" data-width="1920" data-height="1080">
+        <div data-hf-id="hf-nfhz" id="s1-lines">
+          <div data-hf-id="hf-d3d2" class="s1-line" id="s1-line-1">
+            <div data-hf-id="hf-3leq" class="s1-icon">
+              <svg data-hf-id="hf-0988" viewBox="0 0 64 64" fill="none" stroke="#8bd1b9" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+                <circle data-hf-id="hf-r10y" cx="32" cy="34" r="24" />
+                <path data-hf-id="hf-a7np" d="M32 20 V34 L42 40" />
+                <path data-hf-id="hf-uytx" d="M24 4 H40" />
+              </svg>
+            </div>
+            <div data-hf-id="hf-w9xl" class="s1-text">Beratur lama di klinik<span data-hf-id="hf-dci8" class="s1-q">?</span></div>
+          </div>
+          <div data-hf-id="hf-9591" class="s1-line" id="s1-line-2">
+            <div data-hf-id="hf-l1qe" class="s1-icon">
+              <svg data-hf-id="hf-cmts" viewBox="0 0 64 64" fill="none" stroke="#8bd1b9" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+                <path data-hf-id="hf-rwlc" d="M14 6 H38 L52 20 V58 H14 Z" />
+                <path data-hf-id="hf-xen1" d="M38 6 V20 H52" />
+                <path data-hf-id="hf-9mxa" d="M22 32 H44 M22 42 H44 M22 52 H34" />
+              </svg>
+            </div>
+            <div data-hf-id="hf-idmt" class="s1-text">Rekod kesihatan berselerak<span data-hf-id="hf-z3vs" class="s1-q">?</span></div>
+          </div>
+          <div data-hf-id="hf-65zg" class="s1-line" id="s1-line-3">
+            <div data-hf-id="hf-lg1f" class="s1-icon">
+              <svg data-hf-id="hf-bfwp" viewBox="0 0 64 64" fill="none" stroke="#8bd1b9" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+                <rect data-hf-id="hf-61c3" x="6" y="12" width="52" height="46" rx="8" />
+                <path data-hf-id="hf-z808" d="M6 26 H58 M20 4 V18 M44 4 V18" />
+                <path data-hf-id="hf-vry4" d="M25 36 L39 50 M39 36 L25 50" />
+              </svg>
+            </div>
+            <div data-hf-id="hf-7uh3" class="s1-text">Terlupa tarikh temujanji<span data-hf-id="hf-xwyp" class="s1-q">?</span></div>
+          </div>
+        </div>
+
+        <div data-hf-id="hf-rp9c" id="s1-answer">
+          <div data-hf-id="hf-3x25" id="s1-answer-kicker">Kini ada cara yang</div>
+          <div data-hf-id="hf-v2y2" id="s1-answer-main"><span data-hf-id="hf-z3dt" id="s1-answer-accent">lebih mudah.</span></div>
+          <svg data-hf-id="hf-in31" id="s1-underline" viewBox="0 0 620 30" fill="none">
+            <path data-hf-id="hf-z1km" id="s1-underline-path" d="M8 20 C 160 4, 420 4, 612 18" stroke="#3cb394" stroke-width="8" stroke-linecap="round" />
+          </svg>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const lines = ["#s1-line-1", "#s1-line-2", "#s1-line-3"];
+        const starts = [0.3, 1.6, 2.9];
+        lines.forEach((sel, i) => {
+          const t = starts[i];
+          tl.fromTo(sel, { opacity: 0, y: 60, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.6)", transformOrigin: "0% 50%" }, t);
+          tl.fromTo(sel + " .s1-icon", { rotation: -25, scale: 0.4 }, { rotation: 0, scale: 1, duration: 0.6, ease: "back.out(2)" }, t + 0.05);
+          if (i < 2) {
+            tl.to(sel, { opacity: 0.32, duration: 0.4, ease: "power2.out" }, starts[i + 1]);
+          }
+        });
+        // Collapse the three problems away
+        tl.to(lines, { opacity: 0, x: -140, filter: "blur(10px)", duration: 0.45, stagger: 0.06, ease: "power2.in" }, 4.15);
+        // The answer
+        tl.fromTo("#s1-answer-kicker", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 4.5);
+        tl.fromTo("#s1-answer-main", { opacity: 0, y: 70, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "expo.out" }, 4.6);
+        tl.fromTo("#s1-underline-path", { strokeDasharray: 640, strokeDashoffset: 640 }, { strokeDashoffset: 0, duration: 0.55, ease: "power2.inOut" }, 4.9);
+        // Exit into the drop
+        tl.to("#s1-answer", { opacity: 0, scale: 1.18, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, 5.6);
+        window.__timelines["s1-hook"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

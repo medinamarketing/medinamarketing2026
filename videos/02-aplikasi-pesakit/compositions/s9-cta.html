@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-500-normal.woff2") format("woff2");
+          font-weight: 500;
+        }
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-700-normal.woff2") format("woff2");
+          font-weight: 700;
+        }
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-800-normal.woff2") format("woff2");
+          font-weight: 800;
+        }
+        #s9-root {
+          position: absolute;
+          inset: 0;
+          font-family: "Jakarta", sans-serif;
+          color: #12455a;
+        }
+        #s9-panel {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(110% 110% at 50% 40%, #ffffff 0%, #f3faf8 55%, #e3f2ee 100%);
+        }
+        .s9-blob {
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(70px);
+        }
+        #s9-blob-a {
+          width: 700px;
+          height: 700px;
+          left: -200px;
+          top: -260px;
+          background: rgba(139, 209, 185, 0.45);
+        }
+        #s9-blob-b {
+          width: 760px;
+          height: 760px;
+          right: -240px;
+          bottom: -320px;
+          background: rgba(185, 227, 232, 0.6);
+        }
+        .s9-phone {
+          position: absolute;
+          top: 300px;
+          width: 254px;
+          height: 535px;
+          padding: 7px;
+          border-radius: 40px;
+          background: linear-gradient(150deg, #33454e 0%, #121d23 40%, #0a1217 100%);
+          box-shadow: 0 40px 80px rgba(18, 69, 90, 0.35);
+        }
+        .s9-screen {
+          width: 240px;
+          height: 521px;
+          border-radius: 33px;
+          overflow: hidden;
+          background: #f1f5f6;
+        }
+        .s9-screen img {
+          display: block;
+          width: 240px;
+          height: 521px;
+        }
+        #s9-phone-l {
+          left: 230px;
+        }
+        #s9-phone-r {
+          left: 1436px;
+        }
+        #s9-center {
+          position: absolute;
+          left: 560px;
+          top: 170px;
+          width: 800px;
+          text-align: center;
+        }
+        #s9-logo {
+          display: block;
+          width: 560px;
+          height: 208px;
+          margin: 0 auto;
+        }
+        #s9-title {
+          margin-top: 46px;
+          font-weight: 800;
+          font-size: 92px;
+          line-height: 1;
+          letter-spacing: -0.035em;
+        }
+        #s9-badge-row {
+          margin-top: 34px;
+          height: 64px;
+        }
+        #s9-badge {
+          display: inline-block;
+          height: 64px;
+          padding: 0 34px;
+          border-radius: 32px;
+          background: #1f7a5e;
+          color: #ffffff;
+          font-weight: 800;
+          font-size: 28px;
+          letter-spacing: 0.2em;
+          line-height: 64px;
+        }
+        #s9-line {
+          margin-top: 30px;
+          font-weight: 500;
+          font-size: 34px;
+          color: #2b4f5e;
+        }
+        #s9-footer {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 900px;
+          text-align: center;
+          font-weight: 700;
+          font-size: 30px;
+          color: #12455a;
+        }
+        #s9-footer-sep {
+          color: #1f7a5e;
+        }
+      </style>
+
+      <div data-hf-id="hf-ff9d" id="s9-root" data-composition-id="s9-cta" data-width="1920" data-height="1080">
+        <div data-hf-id="hf-5sp0" id="s9-panel">
+          <div data-hf-id="hf-39dn" class="s9-blob" id="s9-blob-a" data-layout-allow-overflow=""></div>
+          <div data-hf-id="hf-ulhs" class="s9-blob" id="s9-blob-b" data-layout-allow-overflow=""></div>
+        </div>
+
+        <div data-hf-id="hf-hrht" class="s9-phone" id="s9-phone-l"><div data-hf-id="hf-lwe1" class="s9-screen"><img data-hf-id="hf-yc1q" src="assets/screens/login.jpg" alt=""></div></div>
+        <div data-hf-id="hf-4hbj" class="s9-phone" id="s9-phone-r"><div data-hf-id="hf-3oy5" class="s9-screen"><img data-hf-id="hf-tlb3" src="assets/screens/utama.jpg" alt=""></div></div>
+
+        <div data-hf-id="hf-b0q9" id="s9-center">
+          <img data-hf-id="hf-k9cs" id="s9-logo" src="assets/img/logo-full.png" alt="Klinik Medina">
+          <div data-hf-id="hf-tjbv" id="s9-title">Aplikasi Pesakit</div>
+          <div data-hf-id="hf-q00c" id="s9-badge-row"><span data-hf-id="hf-z852" id="s9-badge">AKAN DATANG</span></div>
+          <div data-hf-id="hf-2jda" id="s9-line">Percuma untuk semua pesakit Klinik Medina.</div>
+        </div>
+
+        <div data-hf-id="hf-uy3f" id="s9-footer">Klinik Medina Kuala Nerus <span data-hf-id="hf-l7he" id="s9-footer-sep">·</span> 09-662 1491</div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        // White panel blooms out from the centre on the impact
+        tl.fromTo("#s9-panel", { clipPath: "circle(0% at 50% 50%)" }, { clipPath: "circle(75% at 50% 50%)", duration: 0.8, ease: "expo.out" }, 0);
+        tl.fromTo("#s9-logo", { opacity: 0, scale: 0.7, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "back.out(1.5)" }, 0.25);
+        tl.fromTo("#s9-title", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 0.6);
+        tl.fromTo("#s9-phone-l", { opacity: 0, x: -260, rotation: -24 }, { opacity: 1, x: 0, rotation: -9, duration: 0.9, ease: "expo.out" }, 0.5);
+        tl.fromTo("#s9-phone-r", { opacity: 0, x: 260, rotation: 24 }, { opacity: 1, x: 0, rotation: 9, duration: 0.9, ease: "expo.out" }, 0.6);
+        tl.fromTo("#s9-badge", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.2)" }, 1.2);
+        tl.fromTo("#s9-line", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.55);
+        tl.fromTo("#s9-footer", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 2.0);
+        // Slow settle while the music rings out
+        tl.to("#s9-phone-l", { y: -14, rotation: -7, duration: 3, ease: "sine.inOut" }, 1.55);
+        tl.to("#s9-phone-r", { y: -14, rotation: 7, duration: 3, ease: "sine.inOut" }, 1.55);
+        tl.to("#s9-center", { scale: 1.03, duration: 4.6, ease: "sine.inOut" }, 1.4);
+        window.__timelines["s9-cta"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

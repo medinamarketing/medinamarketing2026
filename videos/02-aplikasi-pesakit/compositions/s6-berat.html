@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-500-normal.woff2") format("woff2");
+          font-weight: 500;
+        }
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-700-normal.woff2") format("woff2");
+          font-weight: 700;
+        }
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-800-normal.woff2") format("woff2");
+          font-weight: 800;
+        }
+        #s6-root {
+          position: absolute;
+          inset: 0;
+          font-family: "Jakarta", sans-serif;
+          color: #ffffff;
+        }
+        #s6-wrap {
+          position: absolute;
+          inset: 0;
+        }
+        #s6-copy {
+          position: absolute;
+          left: 192px;
+          top: 170px;
+          width: 900px;
+        }
+        #s6-kicker {
+          font-weight: 800;
+          font-size: 26px;
+          letter-spacing: 0.22em;
+          color: #8bd1b9;
+        }
+        #s6-headline {
+          margin-top: 22px;
+          font-weight: 800;
+          font-size: 66px;
+          line-height: 1.08;
+          letter-spacing: -0.025em;
+        }
+        #s6-headline-accent {
+          color: #5ed3b0;
+          white-space: nowrap;
+        }
+        /* Weight-loss progress */
+        #s6-progress {
+          position: absolute;
+          left: 192px;
+          top: 470px;
+          width: 860px;
+          height: 300px;
+          display: flex;
+          align-items: center;
+          gap: 48px;
+        }
+        #s6-ring-box {
+          position: relative;
+          flex: 0 0 260px;
+          width: 260px;
+          height: 260px;
+        }
+        #s6-ring-svg {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 260px;
+          height: 260px;
+        }
+        #s6-ring-center {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 260px;
+          height: 260px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        #s6-ring-pct {
+          font-weight: 800;
+          font-size: 64px;
+          line-height: 1;
+          font-variant-numeric: tabular-nums;
+        }
+        #s6-ring-sub {
+          margin-top: 6px;
+          font-weight: 500;
+          font-size: 22px;
+          color: rgba(255, 255, 255, 0.7);
+        }
+        #s6-loss-label {
+          font-weight: 700;
+          font-size: 28px;
+          color: rgba(255, 255, 255, 0.75);
+        }
+        #s6-loss {
+          margin-top: 6px;
+          font-weight: 800;
+          font-size: 120px;
+          line-height: 1;
+          letter-spacing: -0.03em;
+          color: #5ed3b0;
+          font-variant-numeric: tabular-nums;
+          white-space: nowrap;
+        }
+        #s6-loss-sub {
+          margin-top: 12px;
+          font-weight: 500;
+          font-size: 28px;
+          color: rgba(255, 255, 255, 0.75);
+        }
+        /* Rewards */
+        #s6-points {
+          position: absolute;
+          left: 192px;
+          top: 500px;
+          width: 560px;
+          height: 280px;
+          border-radius: 34px;
+          overflow: hidden;
+          box-shadow: 0 40px 90px rgba(2, 16, 24, 0.6), 0 0 0 2px rgba(185, 227, 232, 0.25);
+        }
+        #s6-points img {
+          display: block;
+          width: 560px;
+          height: 280px;
+        }
+        .s6-earn {
+          position: absolute;
+          left: 790px;
+          height: 66px;
+          padding: 0 28px 0 12px;
+          border-radius: 33px;
+          background: rgba(255, 255, 255, 0.1);
+          border: 2px solid rgba(139, 209, 185, 0.4);
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          white-space: nowrap;
+        }
+        .s6-earn-pts {
+          height: 44px;
+          padding: 0 16px;
+          border-radius: 22px;
+          background: #3cb394;
+          color: #08303d;
+          font-weight: 800;
+          font-size: 24px;
+          line-height: 44px;
+        }
+        .s6-earn-text {
+          font-weight: 700;
+          font-size: 24px;
+        }
+        #s6-earn-1 {
+          top: 520px;
+        }
+        #s6-earn-2 {
+          top: 608px;
+        }
+        #s6-earn-3 {
+          top: 696px;
+        }
+        .phone {
+          position: absolute;
+          width: 424px;
+          height: 892px;
+          padding: 12px;
+          border-radius: 66px;
+          background: linear-gradient(150deg, #33454e 0%, #121d23 40%, #0a1217 100%);
+          box-shadow: 0 60px 120px rgba(2, 16, 24, 0.6), inset 0 0 0 2px rgba(255, 255, 255, 0.14);
+        }
+        .phone-screen {
+          position: relative;
+          width: 400px;
+          height: 866px;
+          border-radius: 54px;
+          overflow: hidden;
+          background: #f1f5f6;
+        }
+        .phone-screen img {
+          position: absolute;
+          left: 0;
+          top: 0;
+          display: block;
+          width: 400px;
+          height: 866px;
+        }
+        #s6-phone {
+          left: 1300px;
+          top: 94px;
+        }
+      </style>
+
+      <div data-hf-id="hf-66bp" id="s6-root" data-composition-id="s6-berat" data-width="1920" data-height="1080">
+        <div data-hf-id="hf-0cv7" id="s6-wrap">
+          <div data-hf-id="hf-79m8" id="s6-copy">
+            <div data-hf-id="hf-17ll" id="s6-kicker">TURUN BERAT &amp; MATA GANJARAN</div>
+            <div data-hf-id="hf-0lqg" id="s6-headline">Capai sasaran. <span data-hf-id="hf-n4o8" id="s6-headline-accent">Kumpul mata ganjaran.</span></div>
+          </div>
+
+          <div data-hf-id="hf-2miu" id="s6-progress">
+            <div data-hf-id="hf-njfl" id="s6-ring-box">
+              <svg data-hf-id="hf-ogfk" id="s6-ring-svg" viewBox="0 0 260 260" fill="none">
+                <circle data-hf-id="hf-uxss" cx="130" cy="130" r="108" stroke="rgba(185,227,232,0.16)" stroke-width="26" />
+                <circle data-hf-id="hf-ee2o" id="s6-ring" cx="130" cy="130" r="108" stroke="#3cb394" stroke-width="26" stroke-linecap="round" transform="rotate(-90 130 130)" />
+              </svg>
+              <div data-hf-id="hf-sbmx" id="s6-ring-center">
+                <div data-hf-id="hf-u60o" id="s6-ring-pct">0%</div>
+                <div data-hf-id="hf-u535" id="s6-ring-sub">ke sasaran</div>
+              </div>
+            </div>
+            <div data-hf-id="hf-yeow">
+              <div data-hf-id="hf-r9cs" id="s6-loss-label">Sudah turun</div>
+              <div data-hf-id="hf-4lok" id="s6-loss">−0.0 kg</div>
+              <div data-hf-id="hf-zyg0" id="s6-loss-sub">88.5 kg → 82.4 kg · sasaran 74.5 kg</div>
+            </div>
+          </div>
+
+          <div data-hf-id="hf-g9pi" id="s6-points"><img data-hf-id="hf-p8fz" src="assets/crops/ganjaran.jpg" alt=""></div>
+          <div data-hf-id="hf-t748" class="s6-earn" id="s6-earn-1"><span data-hf-id="hf-agi0" class="s6-earn-pts">+20</span><span data-hf-id="hf-p5ne" class="s6-earn-text">Hadir temujanji tepat masa</span></div>
+          <div data-hf-id="hf-42lv" class="s6-earn" id="s6-earn-2"><span data-hf-id="hf-06x5" class="s6-earn-pts">+100</span><span data-hf-id="hf-p8vq" class="s6-earn-text">Buat saringan kesihatan</span></div>
+          <div data-hf-id="hf-04hu" class="s6-earn" id="s6-earn-3"><span data-hf-id="hf-2hwk" class="s6-earn-pts">+150</span><span data-hf-id="hf-kovi" class="s6-earn-text">Capai sasaran berat badan</span></div>
+
+          <div data-hf-id="hf-yzce" class="phone" id="s6-phone">
+            <div data-hf-id="hf-9o7x" class="phone-screen">
+              <img data-hf-id="hf-7wma" src="assets/screens/turun-berat.jpg" alt="">
+              <img data-hf-id="hf-y1yq" id="s6-screen-ganjaran" src="assets/screens/ganjaran.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#s6-phone", { y: 820, rotation: -8 }, { y: 0, rotation: 0, duration: 0.85, ease: "expo.out" }, 0);
+        tl.fromTo("#s6-kicker", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.2);
+        tl.fromTo("#s6-headline", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.3);
+
+        // Ring fills to 44% while the loss counts to -6.1 kg
+        const ring = document.getElementById("s6-ring");
+        const LEN = ring.getTotalLength();
+        ring.style.strokeDasharray = LEN;
+        tl.fromTo("#s6-progress", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.6);
+        tl.fromTo(ring, { strokeDashoffset: LEN }, { strokeDashoffset: LEN * (1 - 0.44), duration: 1.4, ease: "power2.inOut" }, 0.8);
+        const pctEl = document.getElementById("s6-ring-pct");
+        const lossEl = document.getElementById("s6-loss");
+        const st = { p: 0, kg: 0 };
+        tl.fromTo(
+          st,
+          { p: 0, kg: 0 },
+          {
+            p: 44,
+            kg: 6.1,
+            duration: 1.4,
+            ease: "power2.inOut",
+            onUpdate: () => {
+              pctEl.textContent = Math.round(st.p) + "%";
+              lossEl.textContent = "−" + st.kg.toFixed(1) + " kg";
+            },
+          },
+          0.8
+        );
+
+        // Switch to rewards: the phone flips to the Mata Ganjaran screen and the balance card lifts out
+        tl.to("#s6-progress", { opacity: 0, y: -30, filter: "blur(6px)", duration: 0.35, ease: "power2.in" }, 2.75);
+        tl.fromTo("#s6-screen-ganjaran", { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 0.4, ease: "power2.out" }, 2.8);
+        // In-phone card box: 1328.8, 193.5, w 366.5
+        tl.fromTo(
+          "#s6-points",
+          { x: 1136.8, y: -306.5, scale: 366.5 / 560, opacity: 0, transformOrigin: "0% 0%" },
+          { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.75, ease: "power3.out", transformOrigin: "0% 0%" },
+          3.1
+        );
+        ["#s6-earn-1", "#s6-earn-2", "#s6-earn-3"].forEach((sel, i) => {
+          tl.fromTo(sel, { opacity: 0, x: -40, scale: 0.9 }, { opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, 3.75 + i * 0.3);
+        });
+
+        tl.to("#s6-wrap", { opacity: 0, scale: 0.96, filter: "blur(10px)", duration: 0.4, ease: "power2.in" }, 5.6);
+        window.__timelines["s6-berat"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

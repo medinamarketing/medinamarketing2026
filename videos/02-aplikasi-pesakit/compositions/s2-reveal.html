@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-500-normal.woff2") format("woff2");
+          font-weight: 500;
+        }
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-700-normal.woff2") format("woff2");
+          font-weight: 700;
+        }
+        @font-face {
+          font-family: "Jakarta";
+          src: url("assets/fonts/plus-jakarta-sans-latin-800-normal.woff2") format("woff2");
+          font-weight: 800;
+        }
+        #s2-root {
+          position: absolute;
+          inset: 0;
+          font-family: "Jakarta", sans-serif;
+          color: #ffffff;
+        }
+        /* Phase A: brand reveal */
+        #s2-brand {
+          position: absolute;
+          inset: 0;
+        }
+        .s2-ring {
+          position: absolute;
+          left: 810px;
+          top: 170px;
+          width: 300px;
+          height: 300px;
+          border-radius: 50%;
+          border: 3px solid rgba(139, 209, 185, 0.6);
+        }
+        #s2-logo {
+          position: absolute;
+          left: 840px;
+          top: 200px;
+          width: 240px;
+          height: 240px;
+          border-radius: 56px;
+          overflow: hidden;
+          box-shadow: 0 30px 80px rgba(2, 18, 26, 0.55), 0 0 0 2px rgba(185, 227, 232, 0.25);
+        }
+        #s2-logo img {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+        #s2-title {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 482px;
+          text-align: center;
+          font-weight: 800;
+          font-size: 124px;
+          letter-spacing: -0.035em;
+          line-height: 1.1;
+        }
+        .s2-word {
+          display: inline-block;
+        }
+        #s2-word-2 {
+          color: #5ed3b0;
+        }
+        #s2-brandname {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 650px;
+          text-align: center;
+          font-weight: 800;
+          font-size: 40px;
+          letter-spacing: 0.34em;
+          color: #b9e3e8;
+        }
+        #s2-tagline {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 734px;
+          text-align: center;
+          font-weight: 500;
+          font-size: 36px;
+          color: rgba(255, 255, 255, 0.78);
+        }
+        /* Phase C: login */
+        #s2-copy {
+          position: absolute;
+          left: 192px;
+          top: 300px;
+          width: 600px;
+        }
+        #s2-kicker {
+          font-weight: 800;
+          font-size: 26px;
+          letter-spacing: 0.22em;
+          color: #8bd1b9;
+        }
+        #s2-headline {
+          margin-top: 22px;
+          font-weight: 800;
+          font-size: 66px;
+          line-height: 1.08;
+          letter-spacing: -0.025em;
+        }
+        #s2-headline-accent {
+          color: #5ed3b0;
+        }
+        #s2-body {
+          margin-top: 28px;
+          font-weight: 500;
+          font-size: 30px;
+          line-height: 1.45;
+          color: rgba(255, 255, 255, 0.78);
+        }
+        .phone {
+          position: absolute;
+          width: 424px;
+          height: 892px;
+          padding: 12px;
+          border-radius: 66px;
+          background: linear-gradient(150deg, #33454e 0%, #121d23 40%, #0a1217 100%);
+          box-shadow: 0 60px 120px rgba(2, 16, 24, 0.6), inset 0 0 0 2px rgba(255, 255, 255, 0.14);
+        }
+        .phone-screen {
+          position: relative;
+          width: 400px;
+          height: 866px;
+          border-radius: 54px;
+          overflow: hidden;
+          background: #f1f5f6;
+        }
+        .phone-screen img {
+          position: absolute;
+          left: 0;
+          top: 0;
+          display: block;
+          width: 400px;
+          height: 866px;
+        }
+        #s2-phone {
+          left: 1138px;
+          top: 94px;
+        }
+        #s2-ripple {
+          position: absolute;
+          left: 140px;
+          top: 432px;
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.55);
+        }
+        #s2-callout {
+          position: absolute;
+          left: 830px;
+          top: 640px;
+          width: 540px;
+          height: 96px;
+          border-radius: 18px;
+          overflow: hidden;
+          box-shadow: 0 30px 70px rgba(2, 16, 24, 0.55), 0 0 0 3px rgba(94, 211, 176, 0.9);
+        }
+        #s2-callout img {
+          display: block;
+          width: 540px;
+          height: 96px;
+        }
+        #s2-type-mask {
+          position: absolute;
+          left: 14px;
+          top: 14px;
+          width: 500px;
+          height: 66px;
+          background: #ffffff;
+        }
+        #s2-type-clip {
+          position: absolute;
+          left: 30px;
+          top: 26px;
+          width: 0px;
+          height: 44px;
+          overflow: hidden;
+        }
+        #s2-type-text {
+          font-weight: 700;
+          font-size: 32px;
+          line-height: 44px;
+          color: #14313d;
+          white-space: nowrap;
+        }
+      </style>
+
+      <div data-hf-id="hf-h84g" id="s2-root" data-composition-id="s2-reveal" data-width="1920" data-height="1080">
+        <div data-hf-id="hf-ed5u" id="s2-brand">
+          <div data-hf-id="hf-ll1c" class="s2-ring" id="s2-ring-1"></div>
+          <div data-hf-id="hf-u8x7" class="s2-ring" id="s2-ring-2"></div>
+          <div data-hf-id="hf-idpq" id="s2-logo"><img data-hf-id="hf-yy1y" src="assets/img/logo-mark.png" alt=""></div>
+          <div data-hf-id="hf-kz03" id="s2-title"><span data-hf-id="hf-0apv" class="s2-word" id="s2-word-1">Aplikasi</span> <span data-hf-id="hf-j9i3" class="s2-word" id="s2-word-2">Pesakit</span></div>
+          <div data-hf-id="hf-9305" id="s2-brandname">KLINIK MEDINA</div>
+          <div data-hf-id="hf-lc23" id="s2-tagline">Urusan kesihatan anda, kini di tapak tangan.</div>
+        </div>
+
+        <div data-hf-id="hf-1lvw" id="s2-copy">
+          <div data-hf-id="hf-1z8m" id="s2-kicker">MUDAH &amp; SELAMAT</div>
+          <div data-hf-id="hf-3rxr" id="s2-headline">Log masuk dengan <span data-hf-id="hf-7fyt" id="s2-headline-accent">No. Kad Pengenalan.</span></div>
+          <div data-hf-id="hf-pxuy" id="s2-body">Tiada kata laluan untuk diingat. Pasang terus ke skrin utama telefon anda.</div>
+        </div>
+
+        <div data-hf-id="hf-r5ea" class="phone" id="s2-phone">
+          <div data-hf-id="hf-9o7x" class="phone-screen">
+            <img data-hf-id="hf-517a" id="s2-screen-login" src="assets/screens/login.jpg" alt="">
+            <img data-hf-id="hf-kzag" id="s2-screen-utama" src="assets/screens/utama.jpg" alt="">
+            <div data-hf-id="hf-yt9p" id="s2-ripple"></div>
+          </div>
+        </div>
+
+        <div data-hf-id="hf-71t5" id="s2-callout">
+          <img data-hf-id="hf-z8jn" src="assets/crops/login-ic.jpg" alt="">
+          <div data-hf-id="hf-2iuo" id="s2-type-mask"></div>
+          <div data-hf-id="hf-qa1e" id="s2-type-clip"><div data-hf-id="hf-9o24" id="s2-type-text">900101-11-1234</div></div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        // Phase A — brand bloom on the drop
+        tl.fromTo("#s2-logo", { scale: 0.2, rotation: -18, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 0.9, ease: "back.out(1.7)" }, 0);
+        tl.fromTo("#s2-ring-1", { scale: 0.6, opacity: 0.9 }, { scale: 2.6, opacity: 0, duration: 1.3, ease: "power2.out" }, 0.05);
+        tl.fromTo("#s2-ring-2", { scale: 0.6, opacity: 0.7 }, { scale: 3.6, opacity: 0, duration: 1.6, ease: "power2.out" }, 0.2);
+        tl.fromTo("#s2-word-1", { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 0.35);
+        tl.fromTo("#s2-word-2", { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 0.47);
+        tl.fromTo("#s2-brandname", { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }, 0.7);
+        tl.fromTo("#s2-tagline", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 1.05);
+        tl.to("#s2-brand", { opacity: 0, scale: 0.9, filter: "blur(12px)", duration: 0.35, ease: "power2.in" }, 1.9);
+
+        // Phase C — the phone arrives with the login screen
+        tl.fromTo("#s2-phone", { y: 1100, rotation: 9, opacity: 1 }, { y: 0, rotation: 0, duration: 0.85, ease: "expo.out" }, 2.05);
+        tl.fromTo("#s2-kicker", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 2.25);
+        tl.fromTo("#s2-headline", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 2.35);
+        tl.fromTo("#s2-body", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 2.55);
+
+        // The IC field lifts out of the phone, and the number types in
+        tl.fromTo(
+          "#s2-callout",
+          { x: 365.1, y: -139.8, scale: 0.5735, opacity: 0, transformOrigin: "0% 0%" },
+          { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.4)", transformOrigin: "0% 0%" },
+          3.0
+        );
+        tl.fromTo("#s2-type-clip", { width: 0 }, { width: 300, duration: 0.6, ease: "steps(14)" }, 3.2);
+        // Tap "Log Masuk" and land on the home screen
+        tl.fromTo("#s2-ripple", { scale: 0, opacity: 0.9 }, { scale: 2.2, opacity: 0, duration: 0.55, ease: "power2.out" }, 3.8);
+        tl.to("#s2-callout", { opacity: 0, y: 40, scale: 0.92, duration: 0.35, ease: "power2.in" }, 3.95);
+        tl.fromTo("#s2-screen-utama", { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power2.out" }, 4.0);
+
+        // Copy leaves; the phone stays put and is picked up by the next scene
+        tl.to("#s2-copy", { opacity: 0, x: -80, filter: "blur(8px)", duration: 0.4, ease: "power2.in" }, 5.55);
+        window.__timelines["s2-reveal"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
